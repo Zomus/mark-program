@@ -57,7 +57,6 @@ const http = require("http");
 
 //Runs callback repeatedly
 setInterval(function() {
-<<<<<<< HEAD
     http.get("http://mark-program.herokuapp.com");
 }, 300000); // every 5 minutes (300000)
 
@@ -65,12 +64,3 @@ setInterval(function() {
 PARAMETERS:
 callback, delay...args (optional arguments for callback)
 */
-
-
-
-
-
-=======
-    http.get("http://battle-bane.herokuapp.com");
-}, 300000); // every 5 minutes (300000)
->>>>>>> parent of 60441ea... Changed url to match heroku app url address.
