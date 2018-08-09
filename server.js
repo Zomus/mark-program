@@ -7,12 +7,13 @@ const path = require('path');
 
 const PORT = process.env.PORT || 3000;
 
-const server = express()
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
+const server = express().listen(PORT, function(){
+	console.log(`Listening on ${ PORT }`)
+});
 
-const wss = new SocketServer({ server });
+const wss = new SocketServer({server});
 
-wss.on('connection', (ws) => {
+wss.on('connection', function(ws){
   console.log('Client connected'); 
   ws.on('message', function incoming(data) {
 	  wss.clients.forEach(function each(client) {
@@ -21,8 +22,10 @@ wss.on('connection', (ws) => {
       }
 	  });
   });
-  ws.on('close', () => console.log('Client disconnected'));
-});
+  ws.on('close', function(){
+  	console.log('Client disconnected');
+  });
+}
 
 
 //keep awake
